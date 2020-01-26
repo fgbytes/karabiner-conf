@@ -27,3 +27,12 @@ Karabiner conf to have
 4. caps+' - =
 5. caps+[/] - (/)
 6. caps + 1-9 - same as shift+1-9
+
+### Utility Shift
+
+1. lshift - single tap - open parenthesis
+2. rshift - single tap - semicolon
+
+### Utility space
+
+1. hold space - for shift

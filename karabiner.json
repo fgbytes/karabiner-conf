@@ -16,6 +16,28 @@
                 },
                 "rules": [
                     {
+                        "description": "Map shift keys to parens",
+                        "manipulators": [
+            
+                          {"description": "map left shift to opening parenthesis",
+                           "type": "basic",
+                           "from": {"key_code": "left_shift",
+                                    "modifiers": {"optional": ["any"]}},
+                           "to_if_alone": [{"key_code": "9",
+                                            "modifiers": ["left_shift"]}],
+                           "to": [{"key_code": "left_shift",
+                                   "modifiers": []}]},
+                          {"description": "map right shift to closing parenthesis",
+                           "type": "basic",
+                           "from": {"key_code": "right_shift",
+                                    "modifiers": {"optional": ["any"]}},
+                           "to_if_alone": [{"key_code": "semicolon"
+                                           }],
+                           "to": [{"key_code": "right_shift",
+                                   "modifiers": []}]}
+                        ]
+                      },
+                    {
                         "description": "CapsLock to Hyper/Escape",
                         "manipulators": [
                             {
@@ -68,6 +90,26 @@
                                         "modifiers": [
                                             "left_shift"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option",
+                                            "right_command",
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button1"
                                     }
                                 ],
                                 "type": "basic"
@@ -323,7 +365,6 @@
                                 ],
                                 "type": "basic"
                             },
-                           
                             {
                                 "from": {
                                     "key_code": "a",
@@ -587,7 +628,6 @@
                                 ],
                                 "type": "basic"
                             },
-                            
                             {
                                 "from": {
                                     "key_code": "d",
@@ -763,7 +803,7 @@
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
-                                        "mandatory": [ 
+                                        "mandatory": [
                                             "left_command",
                                             "right_command",
                                             "right_control",
@@ -1236,6 +1276,32 @@
                                 "to": [
                                     {
                                         "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change spacebar to left_shift. (Post spacebar if pressed alone)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar"
                                     }
                                 ],
                                 "type": "basic"
